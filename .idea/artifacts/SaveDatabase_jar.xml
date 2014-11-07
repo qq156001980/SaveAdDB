@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SaveDatabase:jar">
+    <output-path>$USER_HOME$/szq</output-path>
+    <root id="archive" name="SaveDatabase.jar">
+      <element id="module-output" name="SaveDatabase" />
+      <element id="extracted-dir" path="$USER_HOME$/grocery/mysql-connector-java-5.1.26-bin.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

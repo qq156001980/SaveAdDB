@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="db">
+    <output-path>$USER_HOME$/szq</output-path>
+    <root id="archive" name="db.jar">
+      <element id="module-output" name="SaveDatabase" />
+      <element id="file-copy" path="$USER_HOME$/grocery/mysql-connector-java-5.1.26-bin.jar" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
