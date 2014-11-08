@@ -49,33 +49,75 @@ public class Function {
 
                 ArrayList<String> list=sort(separate[1].trim());
 
-
-                String ad_top1=list.get(0);
-
-                String ad_top2=list.get(1);
-
-                String ad_top3=list.get(2);
-
-                String ad_top4=list.get(3);
-
-                String ad_top5=list.get(4);
-
                 RecommendList rl=new RecommendList();
 
-                rl.setMac(mac);
 
-                rl.setAd_top1(ad_top1);
+                switch (list.size()){
+                    case 1:
+                        rl.setMac(mac);
+                        rl.setAd_top1(list.get(0));
 
-                rl.setAd_top2(ad_top2);
+                        insertOrUpdatetList.add(rl);
+                        break;
+                    case 2:
+                        rl.setMac(mac);
 
-                rl.setAd_top3(ad_top3);
+                        rl.setAd_top1(list.get(0));
 
-                rl.setAd_top4(ad_top4);
+                        rl.setAd_top2(list.get(1));
 
-                rl.setAd_top5(ad_top5);
+                        insertOrUpdatetList.add(rl);
 
-                insertOrUpdatetList.add(rl);
+                        break;
 
+                    case 3:
+                        rl.setMac(mac);
+
+                        rl.setAd_top1(list.get(0));
+
+                        rl.setAd_top2(list.get(1));
+
+                        rl.setAd_top3(list.get(2));
+
+                        insertOrUpdatetList.add(rl);
+
+                        break;
+                    case 4:
+                        rl.setMac(mac);
+
+                        rl.setAd_top1(list.get(0));
+
+                        rl.setAd_top2(list.get(1));
+
+                        rl.setAd_top3(list.get(2));
+
+                        rl.setAd_top4(list.get(3));
+
+                        insertOrUpdatetList.add(rl);
+
+                        break;
+
+                    case 5:
+                        rl.setMac(mac);
+
+                        rl.setAd_top1(list.get(0));
+
+                        rl.setAd_top2(list.get(1));
+
+                        rl.setAd_top3(list.get(2));
+
+                        rl.setAd_top4(list.get(3));
+
+                        rl.setAd_top5(list.get(4));
+
+                        insertOrUpdatetList.add(rl);
+
+                        break;
+
+
+
+                }
+               
             }
 
         }catch(IOException e){
@@ -89,15 +131,19 @@ public class Function {
 
         int flag=0;
 
-        double[] weight=new double[5];
 
-        String[] ad_id=new String[5];
 
         ArrayList<String> list=new ArrayList<String>();
 
         String[] separate=s.split(" ");
 
-        for(int i=0;i<separate.length;i++){
+        int length=separate.length;
+
+        double[] weight=new double[length];
+
+        String[] ad_id=new String[length];
+
+        for(int i=0;i<length;i++){
 
             String[] tempSeparate=separate[i].split(":");
 
@@ -138,7 +184,7 @@ public class Function {
 
         }
 
-        for(int l=0;l<5;l++){
+        for(int l=0;l<length;l++){
 
             list.add(ad_id[l]);
         }
@@ -155,7 +201,10 @@ public class Function {
 
 
         try {
-            String sql = "INSERT INTO " +DBConn.getTableName()+ "(mac,ad_top1,ad_top2,ad_top3,ad_top4,ad_top5)VALUE(" + rl.toString() + ");"; // 插入数据的sql语句
+
+            String sql = "INSERT INTO " +DBConn.getTableName()+ "(mac,phone,province,city,area,age,salary,sex,ad_top1,ad_top2,ad_top3,ad_top4,ad_top5,ad_feed1,ad_feed2,ad_feed3,ad_feed4,ad_feed5)VALUE(" + rl.toString() + ");"; // 插入数据的sql语句
+
+            System.out.println(sql);
 
             int count = st.executeUpdate(sql);  // 执行插入操作的sql语句，并返回插入数据的个数
 

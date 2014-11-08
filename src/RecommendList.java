@@ -6,15 +6,42 @@ public class RecommendList {
 
     private String mac;
 
-    private String ad_top1;
+    private String phone="0";
 
-    private String ad_top2;
+    private String province="0";
 
-    private String ad_top3;
+    private String city="0";
 
-    private String ad_top4;
+    private String area="0";
 
-    private String ad_top5;
+    private String age="0";
+
+    private String salary="0";
+
+    private String sex="0";
+
+
+
+
+    private String ad_top1="0";
+
+    private String ad_top2="0";
+
+    private String ad_top3="0";
+
+    private String ad_top4="0";
+
+    private String ad_top5="0";
+
+    private String ad_feed1="0";
+
+    private String ad_feed2="0";
+
+    private String ad_feed3="0";
+
+    private String ad_feed4="0";
+
+    private String ad_feed5="0";
 
     public String getMac() {
         return mac;
@@ -66,6 +93,7 @@ public class RecommendList {
 
     @Override
     public String toString() {
-        return "'"+mac+"','"+ad_top1+"','"+ad_top2+"','"+ad_top3+"','"+ad_top4+"','"+ad_top5+"'";
+        return "'"+mac+"','"+phone+"','"+province+"','"+city+"','"+area+"','"+age+"','"+salary+"','"+sex+"','"+ad_top1+"','"+ad_top2+"','"+ad_top3+"','"+ad_top4+"','"+ad_top5+"','"+
+                ad_feed1+"','"+ad_feed2+"','"+ad_feed3+"','"+ad_feed4+"','"+ad_feed5+"'";
     }
 }

@@ -17,13 +17,13 @@ public class DBConn {
 
     private static final String URL = "jdbc:mysql://localhost:3306/";
 
-    private static String MyDatabase = "szq";
+    private static String MyDatabase = "ad";
 
     private static String UserName = "root";
 
-    private static String Password = "123";
+    private static String Password = "root";
 
-    private static String TableName = "rec";
+    private static String TableName = "users";
 
     public static String getTableName() {
         return TableName;
